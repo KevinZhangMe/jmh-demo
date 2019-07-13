@@ -25,19 +25,21 @@ import org.openjdk.jmh.runner.RunnerException;
 import com.technologiesinsight.jmh.helper.LunchHelper;
 
 /**
+ * 测试不同 Map 的读取性能
+ *
  * @author KevinZhang <kevin.zhang.me@gmail.com>
  */
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
-@Measurement(iterations = 1, time = 1, timeUnit = TimeUnit.SECONDS)
-@Warmup(iterations = 0, time = 1, timeUnit = TimeUnit.SECONDS)
-@Fork(1)
+//@Measurement(iterations = 1, time = 1, timeUnit = TimeUnit.SECONDS)
+//@Warmup(iterations = 0, time = 1, timeUnit = TimeUnit.SECONDS)
+//@Fork(1)
 @State(Scope.Benchmark)
 @SuppressWarnings("unused")
 public class MapBenchmark {
 
     /**
-     * JMH 会按照顺序注入 type 每一个声明的值运行
+     * JMH 会按照顺序注入type的值，并运行
      */
     @Param({"hashMap", "treeMap", "concurrentHashMap"})
     private String type;
